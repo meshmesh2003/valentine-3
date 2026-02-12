@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You Baby ❤️</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Comic Sans MS', cursive;
+  overflow: hidden;
+}
+
+.envelope {
+  width: 200px;
+  height: 120px;
+  background: #ff4d6d;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.envelope:before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 60px solid #ff4d6d;
+}
+
+.letter {
+  display: none;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  animation: fadeIn 1s forwards;
+}
+
+img {
+  width: 200px;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+h1 {
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#yesBtn { background: #ff4d6d; color: white; }
+#noBtn { background: #333; color: white; position: absolute; }
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+</style>
+</head>
+<body>
+
+<div class="envelope" onclick="openLetter()"></div>
+
+<div class="letter" id="letter">
+  <h1>I LOVEEEE YOUUU ❤️</h1>
+  <img src="photo.jpg">
+  <p>You are amazing, Baby 🥹💖</p>
+  <button id="yesBtn" onclick="yesClicked()">YES 💕</button>
+  <button id="noBtn">NO 😈</button>
+</div>
+
+<script>
+function openLetter() {
+  document.querySelector('.envelope').style.display = 'none';
+  document.getElementById('letter').style.display = 'block';
+}
+
+function yesClicked() {
+  document.body.innerHTML = "<h1 style='color:white;font-size:40px;'>YAYYY BABY 💖💍</h1>";
+}
+
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.top = Math.random() * window.innerHeight + "px";
+  noBtn.style.left = Math.random() * window.innerWidth + "px";
+});
+</script>
+
+</body>
+</html>
